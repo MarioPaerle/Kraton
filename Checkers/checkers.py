@@ -7,7 +7,7 @@ BLACK = -1
 EMPTY = 0
 RED_KING   = 2
 BLACK_KING = -2
-BOARD_SIZE = 12
+BOARD_SIZE = 10
 
 
 class Move:
@@ -47,9 +47,9 @@ class CheckersGame:
             for col in range(BOARD_SIZE):
                 if (row + col) % 2 == 1:
                     if row < (BOARD_SIZE-1) // 2:
-                        board[row][col] = BLACK
+                        board[row][col] = BLACK if row != 1 else BLACK_KING
                     elif row > (BOARD_SIZE+1) // 2:
-                        board[row][col] = RED
+                        board[row][col] = RED if row != BOARD_SIZE - 2 else RED_KING
         return board
 
     def reset(self) -> np.ndarray:

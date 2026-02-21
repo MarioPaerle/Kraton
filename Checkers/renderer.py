@@ -62,7 +62,7 @@ class CheckersRenderer:
         pygame.draw.circle(self.screen, base, (x, y), PIECE_RADIUS)
         pygame.draw.circle(self.screen, (255, 255, 255, 60), (x, y), PIECE_RADIUS, 2)
         if is_king:
-            crown = self.font.render("♛", True, (255, 215, 0))
+            crown = self.font.render("K", True, (255, 215, 0))
             self.screen.blit(crown, crown.get_rect(center=(x, y)))
 
     def draw_pieces(self):
